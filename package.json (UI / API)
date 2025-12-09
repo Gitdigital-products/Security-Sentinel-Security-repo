@@ -1,0 +1,23 @@
+
+{
+  "name": "security-sentinel",
+  "version": "1.0.0",
+  "description": "Security Sentinel - security scanning orchestration",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "jest",
+    "scan": "python3 scanner/run_scanner.py"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "supertest": "^6.3.0",
+    "nodemon": "^2.0.22"
+  }
+}
