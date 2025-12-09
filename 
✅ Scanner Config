@@ -1,0 +1,9 @@
+sentinel.config.json
+
+{
+  "scanPaths": ["./src", "./config"],
+  "ignore": ["node_modules", "dist"],
+  "failOnHigh": true,
+  "output": "./reports/security",
+  "formats": ["json", "txt"]
+}
