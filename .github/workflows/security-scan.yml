@@ -1,0 +1,33 @@
+
+name: Security Scan
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Run scanner
+        run: python3 scanner/run_scanner.py .
+
+tests/api.test.js
+
+const request = require('supertest');
+const app = require('../src/index');
+
+describe('security-sentinel api', () => {
+  it('health ok', async () => {
+    const r = await request(app).get('/health');
+    expect(r.statusCode).toBe(200);
+    expect(r.body.service).toBe('security-sentinel');
+  });
+});
